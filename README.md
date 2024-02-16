@@ -1,6 +1,6 @@
 # React Todo App
 
-`Front-end Deployed URL` =>
+`Front-end Deployed URL` => https://reactask-todolist.netlify.app/
 
 
 ## Components

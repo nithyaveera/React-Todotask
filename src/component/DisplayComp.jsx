@@ -6,12 +6,13 @@ const DisplayComp = ({ index, item, deleteElem, changeStatus, editTodo }) => {
     let [editTitle, setEditTitle] = useState(item.title)
     let [editDescrip, setEditDescrip] = useState(item.descrip)
     let handleSave = () => {
-        if (editTitle !== '' && editDescrip !== '') {
+        if (editTitle && editDescrip) {
             editTodo(index, { ...item, name: editTitle, descrip: editDescrip })
             setEdittodo(false)
-        } else {
-            alert('Please Enter title and description')
         }
+        else {
+            alert('Please Enter title and description');
+        } 
     }
     let handleCancel = () => {
         setEdittodo(false);
