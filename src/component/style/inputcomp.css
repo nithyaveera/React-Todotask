@@ -1,0 +1,20 @@
+
+#title{
+    padding:6px;
+    width: 30%;
+    border: 2px solid #0fb08b;
+    box-shadow: 1px 1px 6px #0fb08b;
+}
+
+#description{
+    width: 30%;
+    border: 2px solid #0fb08b;
+    box-shadow: 1px 1px 6px #0fb08b;
+}
+.add{
+    width:16%;
+    background-color: #0fb08b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
