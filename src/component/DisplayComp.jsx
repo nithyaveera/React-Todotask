@@ -7,7 +7,7 @@ const DisplayComp = ({ index, item, deleteElem, changeStatus, editTodo }) => {
     let [editDescrip, setEditDescrip] = useState(item.descrip)
     let handleSave = () => {
         if (editTitle && editDescrip) {
-            editTodo(index, { ...item, name: editTitle, descrip: editDescrip })
+            editTodo(item.id, { ...item, name: editTitle, descrip: editDescrip })
             setEdittodo(false)
         }
         else {
@@ -53,8 +53,9 @@ const DisplayComp = ({ index, item, deleteElem, changeStatus, editTodo }) => {
                             <button className='btn del' onClick={handleCancel}>Cancel</button>
                         </>) : (<>
                                 <button className='btn edit' onClick={handleEdit} >Edit</button>
-                                <button className='btn del' onClick={() => { deleteElem(index) }}>Delete</button>
+                                <button className='btn del' onClick={() => { deleteElem(item.id) }}>Delete</button>
                         </>)}
+                        
                     </div>
                 </div>
             </div>

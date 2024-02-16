@@ -9,6 +9,7 @@ const App = () => {
   let [filtertodo,setfiltertodo] = useState([])
   let addTodoList = (title,description) => {
     let newTask = {
+      id:todo.length+1,
       name: title,
       descrip: description,
       status:'pending'
@@ -16,8 +17,8 @@ const App = () => {
     setTodo([...todo,newTask])
   }
   
-  const deleteElem = (index) => {
-    setTodo((pval) => pval.filter((item,ind) => ind !== index))
+  const deleteElem = (item) => {
+    setTodo((pval) => pval.filter((val) => val.id !== item))
   }
   
   const changeStatus = (index, newstatus) => {
@@ -26,11 +27,14 @@ const App = () => {
     setTodo(updatedTodos)
   }
 
-  const editTodo = (index, updatedTodos) => {
-    const updatedTodo = [...todo];
-    updatedTodo[index] = updatedTodos;
-    setTodo(updatedTodo);
+  const editTodo = (id, updatedTodo) => {
+    setTodo((prevTodos) => {
+      return prevTodos.map((todo) => {
+        return todo.id === id ? updatedTodo : todo;
+      });
+    });
   };
+
   
   useEffect(() => {
     if (filterStatus == 'all') {
